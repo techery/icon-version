@@ -43,10 +43,11 @@ class IconVersionPlugin implements Plugin<Project> {
                         findIcons(resDir, manifest).each { File icon ->
                             log.info "Adding flavor name and version to: " + icon.absolutePath
 
-                            def buildName = variant.flavorName + " " + variant.buildType.name
-                            def version = variant.versionName
+                            def flavorName = variant.flavorName
+                            def buildType = variant.buildType.name
+                            def versionNumber = variant.mergedFlavor.versionCode + ""
 
-                            addTextToImage(icon, config, buildName, version)
+                            addTextToImage(icon, config, flavorName, buildType, versionNumber)
                         }
                     }
                 }
