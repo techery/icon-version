@@ -45,9 +45,9 @@ class IconVersionPlugin implements Plugin<Project> {
 
                             def flavorName = variant.flavorName
                             def buildType = variant.buildType.name
-                            def versionNumber = variant.mergedFlavor.versionCode + ""
+                            def versionNumber = variant.mergedFlavor.versionCode
 
-                            addTextToImage(icon, config, flavorName, buildType, versionNumber)
+                            addTextToImage(icon, config, flavorName, "${buildType} ${versionNumber}")
                         }
                     }
                 }

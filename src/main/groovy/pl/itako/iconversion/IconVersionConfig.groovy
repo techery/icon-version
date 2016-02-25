@@ -31,6 +31,12 @@ class IconVersionConfig {
      */
     int[] textColor = [255, 255, 255, 255]
 
+    /**
+     * Format of message to be printed on icon.<br />
+     * NOTE: not used so far, TODO
+     */
+    String overlayTextFormat = '${flavorName}\n${buildType} ${versionName}'
+
     public Color getBackgroundOverlayColor() {
         return intArrayToColor(backgroundOverlayColor) ?: TRANSPARENT
     }
